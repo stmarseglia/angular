@@ -1,0 +1,31 @@
+{
+  "name": "CMS",
+  "authors": [
+    "stmarseglia <st.marseglia@gmail.com>"
+  ],
+  "description": "A simple CMS app",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "CMS",
+    "bootstrap",
+    "angular",
+    "requirejs"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "^2.2.0",
+    "jquery": "^3.1.0",
+    "bootstrap": "^3.3.7",
+    "angular": "^1.5.8"
+  }
+}
