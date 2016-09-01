@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Simple CMS</title>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<nav class="navbar navbar-fixed-top">
+    <div class="row">
+        <div class="text-center page-title col-md-12"><img src="/img/logo.png"></div>
+    </div>
+</nav>
+
+<div class="row" ng-controller="app.productCtrl">
+    <div id="center-container" class="col-md-12">
+
+        <div class="row product-row">
+
+            <div class="col-md-3" ng-repeat="product in products" ng-show="products.length!=0">
+                <div class="row product-desc">
+                    <div class="col-md-12"><span ng-bind="product.description"></span></div>
+                </div>
+                <div class="row">
+                    <div class="text-left col-md-6">
+                        <span ng-bind="product.price | currency:'€':2"></span>
+                    </div>
+                    <div class="text-left col-md-6">
+                        qty: <span ng-class="{'not-available': product.qty==0}" ng-bind="product.qty"></span>
+                        <!-- <span ng-show="product.qty!=0">Available</span> -->
+                        <!-- <span class="not-available" ng-hide="product.qty!=0">Not available</span> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="text-left col-md-12">
+                        <button type="button" class="btn btn-primary" ng-disabled="product.qty==0" ng-click="addProductToCart(product)"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div ng-controller="app.cartCtrl">
+    <button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></button>
+</div>
+
+<script src="lib/requirejs/require.js" data-main="conf/main"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+body {
+  background-color: #fff7ea;
+}
+
+#center-container {
+  padding-right: 23px;
+  padding-left: 23px;
+  padding-top: 60px;
+  padding-bottom: 0px;
+}
+
+.page-title {
+  background-color: black;
+}
+
+.product-desc {
+  min-height: 170px;
+}
+
+.not-available {
+  color: red;
+}
